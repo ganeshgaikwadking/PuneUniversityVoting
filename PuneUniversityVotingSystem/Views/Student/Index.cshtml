@@ -1,0 +1,48 @@
+﻿@model IEnumerable<PuneUniversityVotingSystem.Models.Questions>
+
+@{
+    ViewData["Title"] = "Index";
+    string[] TableHeaders = new string[]
+   {
+        "QuestionId"
+      ,"Question"
+      ,"Option1"
+      ,"Option2"
+           };
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Option1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Option2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option2)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

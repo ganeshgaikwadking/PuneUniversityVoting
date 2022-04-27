@@ -44,7 +44,7 @@ namespace PuneUniversityVotingSystem.Controllers
                     }
                     else
                     {
-                       return RedirectToAction("UserDashbord");
+                       return RedirectToAction("Index", "Student");
 
                     }
                 }
