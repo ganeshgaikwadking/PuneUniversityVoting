@@ -15,7 +15,9 @@ namespace PuneUniversityVotingSystem.Models
         [DataType(DataType.Text)]
         public string Question { get; set; }
 
-        public int OptionId { get; set; }
+        public string Option1 { get; set; }
+
+        public string Option2 { get; set; }
 
     }
 }

@@ -16,7 +16,10 @@
                 @Html.DisplayNameFor(model => model.Question)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OptionId)
+                @Html.DisplayNameFor(model => model.Option1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Option2)
             </th>
             <th></th>
         </tr>
@@ -28,7 +31,10 @@
                 @Html.DisplayFor(modelItem => item.Question)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OptionId)
+                @Html.DisplayFor(modelItem => item.Option1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option2)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.QuestionId">Edit</a> |

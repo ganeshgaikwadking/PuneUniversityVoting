@@ -33,14 +33,14 @@ namespace PuneUniversityVotingSystem.Controllers
         public IActionResult Login(Users User)
         {
             using (_db)
-            {  
+            {
                 var user1 = _db.User.Single(u => u.Email == User.Email && u.Password == User.Password);
                 if (user1 != null)
                 {
                     if(user1.RoleId ==1)
                     {
 
-                        return RedirectToAction("Index","Admin");
+                        return RedirectToAction("Index","Questions");
                     }
                     else
                     {
