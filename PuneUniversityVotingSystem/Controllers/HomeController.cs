@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+
 using System.Threading.Tasks;
 
 namespace PuneUniversityVotingSystem.Controllers
@@ -18,27 +19,28 @@ namespace PuneUniversityVotingSystem.Controllers
         {
             _db = db;
         }
-
         public IActionResult Index()
         {
+            
             return View();
         }
+       
         public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Login(Users user1)
+        public IActionResult Login(Users User)
         {
             using (_db)
-            {
-                var user = _db.User.Where(u => u.Email == user1.Email && u.Password == user1.Password);
-                if (user != null)
+            {  
+                var user1 = _db.User.Single(u => u.Email == User.Email && u.Password == User.Password);
+                if (user1 != null)
                 {
-                    if (user1.RoleId == 1)
+                    if(user1.RoleId ==1)
                     {
 
-                        return RedirectToAction("AdminDashbord");
+                        return RedirectToAction("Index","Admin");
                     }
                     else
                     {

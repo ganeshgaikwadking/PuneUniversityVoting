@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PuneUniversityVotingSystem.Data;
+using PuneUniversityVotingSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,32 @@ namespace PuneUniversityVotingSystem.Controllers
         // GET: AdminController
         public ActionResult Index()
         {
-            return View();
+            
+            var question = GetQuestions();
+
+            var options = GetOptions();
+
+            IndexVM model = new IndexVM();
+            model.Questions = question;
+            model.Options = options;
+
+            return View(model);
         }
+        public List<Questions> GetQuestions()
+        {
+            return new List<Questions>()
+            {
+                
+            };
+        }
+        private List<Options> GetOptions()
+        {
+            return new List<Options>()
+            {
+
+            };
+        }
+
 
         // GET: AdminController/Details/5
         public ActionResult Details(int id)

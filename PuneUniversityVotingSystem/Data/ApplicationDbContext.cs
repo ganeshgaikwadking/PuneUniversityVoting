@@ -15,5 +15,8 @@ namespace PuneUniversityVotingSystem.Data
 
         }
         public DbSet<Users> User { get; set; }
+        public DbSet<Questions> Questions { get; set; }
+
+        public DbSet<Options> options { get; set; }
     }
 }
