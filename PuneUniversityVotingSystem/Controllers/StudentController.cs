@@ -22,6 +22,7 @@ namespace PuneUniversityVotingSystem.Controllers
         // GET: Student
         public async Task<IActionResult> Index()
         {
+
             return View(await _context.Questions.ToListAsync());
         }
 
